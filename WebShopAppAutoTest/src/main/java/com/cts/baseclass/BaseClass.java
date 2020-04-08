@@ -1,0 +1,42 @@
+package com.cts.baseclass;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class BaseClass {
+	WebDriver driver;
+	public WebDriver InitDriver(String browser)
+	{
+		if(browser.equals("chrome")) {
+		System.setProperty("webdriver.chrome.driver", "E:\\maniteja\\drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		}
+		if(browser.equals("fireFox")) {
+			System.setProperty("webdriver.firefx.driver", "E:\\maniteja\\drivers\\geckodriver.exe");
+			driver=new FirefoxDriver();
+		}
+		driver.get("http://demowebshop.tricentis.com/");
+		driver.manage().window().maximize();
+		return driver;
+		
+	}
+	public void quit() {
+
+		driver.quit();
+	}
+	
+	public void getScreenshot(String result) throws IOException {
+		System.out.println(driver);
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(src, new File("E:\\maniteja\\Selenium Testing\\WebShopAppAutoTest\\Screenshots" + result + "screenshot.png"));
+	}
+	
+}
