@@ -8,6 +8,7 @@
           <include name="validatelogin" invocation-numbers="1"/>
           <include name="initDriver"/>
           <include name="CloseBrowser"/>
+          <include name="CheckoutAddress"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- com.cts.tdd.WebShopTest -->

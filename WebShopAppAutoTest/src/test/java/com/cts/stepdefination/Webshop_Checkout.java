@@ -55,5 +55,9 @@ public class Webshop_Checkout extends BaseClass {
 	public void click_on_logout() throws Throwable {
 		checkout.Logout();
 	}
+	 @Then("^closes the browser$")
+	    public void closes_the_browser() throws Throwable {
+	        driver.close();
+	    }
 
 }

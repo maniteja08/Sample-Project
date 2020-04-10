@@ -37,3 +37,4 @@ Given the user launch the chrome application i am on the home page and logs and 
 Then user cicks on checkout link
 Then the user clicks on continue buttons as address is already filled
 Then click on logout
+Then closes the browser

@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/main/resources/feature/Testcase.feature",
-		glue= {"om.cts.testrunner" },
+		glue= {"com.cts.stepdefination" },
 		plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json",
         "junit:target/cucumber-reports/Cucumber.xml"}
 		)

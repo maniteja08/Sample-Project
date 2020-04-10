@@ -54,7 +54,7 @@ public class WebShopTest extends BaseClass {
 	@BeforeTest
 	public void launchBrowser() {
 		driver.get("http://demowebshop.tricentis.com/");
-		logger.debug("Opening the browser with WebShopApp");
+		logger.info("Opening the browser with WebShopApp");
 		loginpage = new Loginpage(driver);
 		basepage = new Basepage(driver);
 		selectproductpage = new SelectProductpage(driver);
@@ -77,7 +77,7 @@ public class WebShopTest extends BaseClass {
 	@Test(priority = 0, dataProvider = "user_details")
 	public void validatelogin(String email, String password) {
 		loginpage.Loginlink();
-		logger.trace("Processing Valid login with username and password");
+		logger.info("Processing Valid login with username and password");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		loginpage.setUsername(email);
 		loginpage.setPassword(password);
@@ -86,7 +86,7 @@ public class WebShopTest extends BaseClass {
 
 	@Test(priority = 1)
 	public void Productselect() {
-		logger.trace("processing select product");
+		logger.info("processing select product");
 
 		selectproductpage.AddBook();
 		selectproductpage.AddComputer();
@@ -108,7 +108,7 @@ public class WebShopTest extends BaseClass {
 
 	@Test(priority = 3)
 	public void CheckoutAddress() {
-		logger.trace("processing check out");
+		logger.info("processing check out");
 
 		shoppingcartpage.Checkoutlink();
 		screenshot.takeSnapShot("E:\\maniteja\\Selenium Testing\\WebShopAppAutoTest\\Screenshots\\checkouts.png");
@@ -117,7 +117,7 @@ public class WebShopTest extends BaseClass {
 
 	@Test
 	public void Logout() {
-		logger.warn("Logging out of the WebPage");
+		logger.info("Logging out of the WebPage");
 
 		basepage.Logout();
 	}

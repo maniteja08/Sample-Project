@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 		glue= {"com.cts.stepdefination" },  	
 		tags= {"@TC01_Webshopapp"},
 		plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json",
-				"junit:target/cucumber-reports/Cucumber.xml"},
+				"junit:target/cucumber-reports/Cucumber.xml",},
 		monochrome = true
 		)
 public class Webshop_LoginRunner {
