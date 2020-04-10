@@ -10,7 +10,8 @@ import cucumber.api.junit.Cucumber;
 		features = "src/main/resources/feature/Testcase.feature",
 		glue= {"com.cts.stepdefination" },
 		plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json",
-        "junit:target/cucumber-reports/Cucumber.xml"}
+        "junit:target/cucumber-reports/Cucumber.xml"},
+		monochrome = true
 		)
 public class Webshop_Shippingcartrunner {
 
