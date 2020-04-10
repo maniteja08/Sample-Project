@@ -44,6 +44,7 @@ public class WebShopTest extends BaseClass {
 	final static Logger logger = LogManager.getLogger(WebShopTest.class.getName());
 
 	@BeforeSuite
+	//user initializes driver
 	public void initDriver() {
 		System.setProperty("webdriver.chrome.driver", "E:\\maniteja\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -52,6 +53,7 @@ public class WebShopTest extends BaseClass {
 
 	@Parameters({ "Browsers" })
 	@BeforeTest
+	//user launches chrome
 	public void launchBrowser() {
 		driver.get("http://demowebshop.tricentis.com/");
 		logger.info("Opening the browser with WebShopApp");
@@ -73,7 +75,7 @@ public class WebShopTest extends BaseClass {
 
 		return excelreader.getData();
 	}
-
+	//user enters username and password and logs in
 	@Test(priority = 0, dataProvider = "user_details")
 	public void validatelogin(String email, String password) {
 		loginpage.Loginlink();
@@ -83,7 +85,7 @@ public class WebShopTest extends BaseClass {
 		loginpage.setPassword(password);
 		loginpage.Btnclick();
 	}
-
+	//user selects the products
 	@Test(priority = 1)
 	public void Productselect() {
 		logger.info("processing select product");
@@ -93,7 +95,7 @@ public class WebShopTest extends BaseClass {
 		selectproductpage.AddPhone();
 		screenshot.takeSnapShot("E:\\maniteja\\Selenium Testing\\WebShopAppAutoTest\\Screenshots\\selectproduct.png");
 	}
-
+	//user opens shipping cart
 	@Test(priority = 2)
 	public void Shoppingcart() {
 		logger.trace("processing shopping cart");
@@ -105,7 +107,7 @@ public class WebShopTest extends BaseClass {
 		shoppingcartpage.Zipcode();
 		shoppingcartpage.Acceptation();
 	}
-
+	//user opens checkout link
 	@Test(priority = 3)
 	public void CheckoutAddress() {
 		logger.info("processing check out");
@@ -114,14 +116,14 @@ public class WebShopTest extends BaseClass {
 		screenshot.takeSnapShot("E:\\maniteja\\Selenium Testing\\WebShopAppAutoTest\\Screenshots\\checkouts.png");
 		addresspage.Selectcontinue();
 	}
-
+	//user logs out of the application
 	@Test
 	public void Logout() {
 		logger.info("Logging out of the WebPage");
 
 		basepage.Logout();
 	}
-
+	//user closes the browser
 	@AfterTest
 	public void CloseBrowser() {
 		screenshot.takeSnapShot("E:\\maniteja\\Selenium Testing\\WebShopAppAutoTest\\Screenshots\\screenshot.png");

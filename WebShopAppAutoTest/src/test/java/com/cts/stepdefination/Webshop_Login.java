@@ -36,7 +36,6 @@ public class Webshop_Login extends BaseClass {
 
 	@Then("^the user login using (.+) and (.+)$")
 	public void the_user_login_using_and(String email, String password) throws Throwable {
-		ExcelReader excelreader = new ExcelReader();    // remove this line ok sir
 		loginpage.setUsername(email);
 		loginpage.setPassword(password);
 		logger.info("enters username and password");

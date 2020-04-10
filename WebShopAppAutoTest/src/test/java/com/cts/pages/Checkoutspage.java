@@ -30,7 +30,7 @@ public class Checkoutspage extends Basepage {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
 	}
-
+//user clicks on continue for payment and delivary option confirmation
 	public void Selectcontinue() {
 		Clickcontinue1.click();
 		selectcheckbox.click();

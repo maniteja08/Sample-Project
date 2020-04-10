@@ -20,17 +20,19 @@ public class Webshop_Checkout extends BaseClass {
 	@Given("^the user launch the chrome application i am on the home page and logs and selects the products and selects shipping cart link$")
 	public void the_user_launch_the_chrome_application_i_am_on_the_home_page_and_logs_and_selects_the_products_and_selects_shipping_cart_link()
 			throws Throwable {
+		
 		driver = InitDriver("chrome");
 		Loginpage loginpage = new Loginpage(driver);
 		loginpage.Loginlink();
 		loginpage.setUsername(excelreader.excel_username(0));
 		loginpage.setPassword(excelreader.excel_password(0));
 		loginpage.Btnclick();
-
+		
 		SelectProductpage selectproductpage = new SelectProductpage(driver);
 		selectproductpage.AddBook();
 		selectproductpage.AddComputer();
 		selectproductpage.AddPhone();
+		
 		Shoppingcartpage shoppingcartpage = new Shoppingcartpage(driver);
 		shoppingcartpage.Shoppingcartlink();
 		shoppingcartpage.Selectcountry();
@@ -39,7 +41,7 @@ public class Webshop_Checkout extends BaseClass {
 		shoppingcartpage.Acceptation();
 
 	}
-
+	
 	@Then("^user cicks on checkout link$")
 	public void user_cicks_on_checkout_link() throws Throwable {
 		checkout = new Checkoutspage(driver);

@@ -30,19 +30,19 @@ public class SelectProductpage extends Basepage {
 		PageFactory.initElements(driver, this);
 
 	}
-
+	//clicks to add books
 	public void AddBook() {
 		selectBook.click();
 		AddBooktocart.click();
 
 	}
-
+	//clicks to add computers
 	public void AddComputer() {
 		selectcomputers.click();
 		selectnotebooks.click();
 		addnotebooktocart.click();
 	}
-
+	//clicks to add phone
 	public void AddPhone() {
 		selectelectronics.click();
 		selectphones.click();

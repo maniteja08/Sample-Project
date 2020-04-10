@@ -13,9 +13,11 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/main/resources/feature",
 				 glue = { "com.cts.stepdefination" }, 
-				 plugin = { "pretty",
-		"json:target/cucumber-reports/Cucumber.json", "junit:target/cucumber-reports/Cucumber.xml",
-		"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html " })
+				 plugin = { "pretty","json:target/cucumber-reports/Cucumber.json",
+						 "junit:target/cucumber-reports/Cucumber.xml",
+						"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html " 
+						 }
+						)
 public class Webshop_Checkoutrunner {
 	@AfterClass
 	public static void setup() {

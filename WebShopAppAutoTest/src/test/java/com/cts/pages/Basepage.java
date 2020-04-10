@@ -19,20 +19,21 @@ public class Basepage {
 		PageFactory.initElements(driver, this);
 	}
 
+//clicks login link		
 	public void Loginlink() {
 		loginlink.click();
 
 	}
-
+//clicks shoppingcart link
 	public void Shoppingcartlink() {
 		ShoppingcartLink.click();
 	}
-
+//clicks checkout link
 	public void Checkoutlink() {
 		Checkoutlink.click();
 
 	}
-
+//clicks logout link
 	public void Logout() {
 		logoutlink.click();
 	}

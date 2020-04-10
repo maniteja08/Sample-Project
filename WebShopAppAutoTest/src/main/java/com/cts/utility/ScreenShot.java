@@ -15,7 +15,7 @@ public class ScreenShot {
 	public ScreenShot(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	//method code to take screen shot
 	public void takeSnapShot(String path1) {
 		TakesScreenshot screenshot = (TakesScreenshot) driver;
 		File Source = screenshot.getScreenshotAs(OutputType.FILE);

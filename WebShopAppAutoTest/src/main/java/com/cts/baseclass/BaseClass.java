@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseClass {
 	WebDriver driver;
+	//Here we are initializing the driver 
 	public WebDriver InitDriver(String browser)
 	{
 		if(browser.equals("chrome")) {
@@ -28,11 +29,12 @@ public class BaseClass {
 		return driver;
 		
 	}
+	//quitting the driver
 	public void quit() {
 
 		driver.quit();
 	}
-	
+	//method to save the screen shot after taking in a particular path
 	public void getScreenshot(String result) throws IOException {
 		System.out.println(driver);
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

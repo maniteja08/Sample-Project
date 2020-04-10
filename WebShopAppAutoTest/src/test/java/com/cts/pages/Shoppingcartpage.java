@@ -26,21 +26,21 @@ public class Shoppingcartpage extends Basepage {
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
-
+//user selects country
 	public void Selectcountry() {
 		countryidclick.click();
 		selectcountryid.click();
 	}
-
+//user selects state
 	public void Selectstate() {
 		selectstate.click();
 	}
-
+//user enters zipcode
 	public void Zipcode() {
 		clickzipcode.click();
 		enterzipcode.sendKeys("600119");
 	}
-
+//user accepts terms and conditions
 	public void Acceptation() {
 		clickestimateshipping.click();
 		clicktermsofservice.click();

@@ -20,15 +20,15 @@ public class Loginpage extends Basepage {
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
-
+//clicks to enter username
 	public void setUsername(String email) {
 		userEmailElement.sendKeys(email);
 	}
-
+//clicks to enter password
 	public void setPassword(String password) {
 		userPasswordElement.sendKeys(password);
 	}
-
+//clicks on login button and logs in after entering valid details
 	public void Btnclick() {
 		loginbtnElement.click();
 	}

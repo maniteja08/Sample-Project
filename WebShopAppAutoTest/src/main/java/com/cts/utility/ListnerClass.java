@@ -7,7 +7,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.cts.baseclass.BaseClass;
-
+//listher class to take screen shot by using itest listner
 public class ListnerClass implements ITestListener  {
 	 BaseClass baseclass=new BaseClass();
 	 public void onTestStart(ITestResult result) {  
